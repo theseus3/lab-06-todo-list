@@ -58,7 +58,7 @@ function customParser(key, value) {
 }
 
 // later in your code, you can use JSON.parse like:
-const json = localStorage.getItem('todos');
+const saved = localStorage.getItem('todos');
 if(saved) {
     todos = JSON.parse(saved, customParser);
 }
