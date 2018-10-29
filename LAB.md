@@ -46,6 +46,24 @@ Each todo looks like:
 
 Notice we need to add the string date using the `Date` constructor.
 
+## More on Dates
+
+When you get to the requirement to show overdue dates differently, you will likely run into an issue that dates get saved in JSON as strings and not dates. In order to "revive" them back into dates, you can add the following helper function and pass it to `JSON.parse`:
+
+```js
+
+function customParser(key, value) {
+    if(key !== 'due') return value;
+    return new Date(value);
+}
+
+// later in your code, you can use JSON.parse like:
+const json = localStorage.getItem('todos');
+if(saved) {
+    todos = JSON.parse(saved, customParser);
+}
+```
+
 ## Process
 
 1. Design your page with static html
