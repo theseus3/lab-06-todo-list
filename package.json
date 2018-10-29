@@ -1,0 +1,19 @@
+{
+  "name": "lab-06-todo-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "add-todo.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theseus3/lab-06-todo-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theseus3/lab-06-todo-list/issues"
+  },
+  "homepage": "https://github.com/theseus3/lab-06-todo-list#readme"
+}
