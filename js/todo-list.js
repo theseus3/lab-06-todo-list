@@ -1,12 +1,10 @@
 function makeTask(task) {
     const html = /*html*/`
-    <li class="task">
-        <h3 class="name" style="background: ${task.date};">
-            ${task.name}
+   
+    <li class="todo">
+        <h3 class="name">
+            ${task.name}, ${task.date}
         </h3>
-// add image here?
-        <img src="assets/${task.image ? task.image : 'nameofimagefile.jpg'}">
-// Look here if things won't work
 
         <button class="danger">X</button>  
     </li>
@@ -29,10 +27,10 @@ const taskList = {
     add(task) {
         const dom = makeTask(task);
 
-    add(date)   {
-        const dom = makeDate(date);
-    }
-   
+    // add(date) {
+        // const dom = makeDate(date);
+    
+ 
         const removeButton = dom.querySelector('button');
         const listItem = dom.querySelector('li');
 
@@ -41,9 +39,7 @@ const taskList = {
             listItem.remove();
         });
 
-        //Marty's note = append to <ul> which will empty the fragment
         list.appendChild(dom);
     }
 };
-
 export default taskList;

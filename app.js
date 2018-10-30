@@ -1,6 +1,6 @@
-import addTask from './add-todo.js';
-import taskList from './todo-list.js';
-import taskApi from './todo-api.js';
+import addTask from './js/add-todo.js';
+import taskList from './js/todo-list.js';
+import taskApi from './js/todo-api.js';
 
 const tasks = taskApi.getAll();
 
@@ -14,11 +14,9 @@ taskList.init(tasks, function(task) {
 // type="date"> into an actual Date
 
 
-addTask.init(function(task) {
-    addTask.add(task);
-    taskList.add(task);
-    taskApi.add(task);
-}
+    addTask.init(function(task) {
+        // addTask.add(task);
+        taskList.add(task);
+        taskApi.add(task);
+    });
 });
-
-onreset="resetTaskList()";

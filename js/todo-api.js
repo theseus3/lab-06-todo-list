@@ -12,16 +12,17 @@ let tasks = [
 function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
-function customParser(key, value) {
-    if(key !== 'due') return value;
-    return new Date('10/30/2018'),
-}
+
+//function customParser(key, value) {
+   // if(key !== 'due') return value;
+   // return new Date('10/30/2018'),
+//};
 
 const tasksApi = {
     getAll() {
         const json = localStorage.getItem('tasks');
         if(json) {
-            tasks = JSON.parse(json, customParser);
+            tasks = JSON.parse(json);
         }
         return tasks;
     },
@@ -34,11 +35,11 @@ const tasksApi = {
         if(index !== -1) {
             tasks.splice(index, 1);
             saveTasks();
-        };
-    add(date); {
-            dates.push(date);
-            saveDates();
-        };  
+        }
+        // add(date); {
+        //     dates.push(date);
+        //     saveDates();
+        // };  
     }
 };
 export default tasksApi;
