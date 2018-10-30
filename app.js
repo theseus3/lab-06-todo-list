@@ -1,11 +1,25 @@
+import addTask from './add-todo.js';
+import taskList from './todo-list.js';
+import taskApi from './todo-api.js';
+
+const tasks = taskApi.getAll();
+
+taskList.init(tasks, function(task) {
+    taskApi.remove(task);
+});
+
+addTask.init(function(task) {
+    
+    taskApi.add(task);
+
+    taskList.add(task);
+
+});
 
 
-const addTask = {
-    thingINeedToDo: function() {
+/* this is for tracking tasks the user adds, but I need to figure 
+out how to datestamp their entries */
 
-    }
-
-};
 
 
 
