@@ -1,25 +1,27 @@
 let tasks = [
     {
-        name: 'Groceries',
-        // If the user enters the tasks, I'm not totally clear about what I would put here
+        name: 'thing1',
+        date: 'datestamp1'
     },
     {
-        name: 'BatheDog',
-        color: 'gray'
-        image: 'Max.jpg'
+        name: 'thing2',
+        date: 'datestamp2'
     }
 ];
 
 function saveTasks() {
-    localStorage.setItem('tasks', JSON.stringify(taks));
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+function customParser(key, value) {
+    if(key !== 'due') return value;
+    return new Date('10/30/2018'),
 }
 
-// should this be tasksApi or todoApi? And if it's wrong here, all else?
 const tasksApi = {
     getAll() {
-        const json = localStorage.getItem('fruits');
+        const json = localStorage.getItem('tasks');
         if(json) {
-            tasks = JSON.parse(json);
+            tasks = JSON.parse(json, customParser);
         }
         return tasks;
     },
@@ -28,12 +30,15 @@ const tasksApi = {
         saveTasks();
     },
     remove(task) {
-        const index = tax.indexOf(task);
+        const index = tasks.indexOf(task);
         if(index !== -1) {
-            fruits.splice(index, 1);
-            saveFruits();
-        }
+            tasks.splice(index, 1);
+            saveTasks();
+        };
+    add(date); {
+            dates.push(date);
+            saveDates();
+        };  
     }
 };
-
 export default tasksApi;

@@ -8,11 +8,11 @@ const addTask = {
 
             const task = {
                 name: elements.name.value,
-                color: elements.color.value,
-                image: elements.image.value
+                date: elements.date.value,
             };
 
             onAdd(task);
+            new Date();
 
             form.reset();
             document.activeElement.blur();

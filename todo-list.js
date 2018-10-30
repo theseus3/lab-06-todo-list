@@ -1,17 +1,16 @@
 function makeTask(task) {
-    const html = /*html*/
+    const html = /*html*/`
     <li class="task">
-        <h3 class="name" style="background: ${task.color};">
+        <h3 class="name" style="background: ${task.date};">
             ${task.name}
         </h3>
-           {/* add image here - why is it adding curly braces? It won't  */}
-        {/* let me delete them... */ */}
+// add image here?
         <img src="assets/${task.image ? task.image : 'nameofimagefile.jpg'}">
-        {/* I think I've done a few things wrong here */ */}
-            {/* the example doesn't have a closing img tag...</img>} */}
+// Look here if things won't work
 
         <button class="danger">X</button>  
-    </li>;
+    </li>
+    `;
 
     const template = document.createElement('template');
     template.innerHTML = html;
@@ -30,8 +29,9 @@ const taskList = {
     add(task) {
         const dom = makeTask(task);
 
-        // Marty's note says to do work of finding elements _before_ appending, 
-        // but I'm not clear on what that points me to do here...
+    add(date)   {
+        const dom = makeDate(date);
+    }
    
         const removeButton = dom.querySelector('button');
         const listItem = dom.querySelector('li');

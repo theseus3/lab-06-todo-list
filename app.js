@@ -6,33 +6,19 @@ const tasks = taskApi.getAll();
 
 taskList.init(tasks, function(task) {
     taskApi.remove(task);
-});
+
+// addTask.init needs to be subscribed to <form> submit event in
+// passing in callback function that creates a new task or todo 
+// object. 
+//new Date() turns the string from the <input 
+// type="date"> into an actual Date
+
 
 addTask.init(function(task) {
-    
-    taskApi.add(task);
-
+    addTask.add(task);
     taskList.add(task);
-
+    taskApi.add(task);
+}
 });
 
-
-/* this is for tracking tasks the user adds, but I need to figure 
-out how to datestamp their entries */
-
-
-
-
-// I'm adding this way too early
-// I am supposed to wait until I've got basic functionality before worrying about this
-
-// function customParser(key, value) {
-    // if(key !== 'due') return value;
-    // return new Date(value);
-// }
-
-// later in your code, you can use JSON.parse like:
-// const saved = localStorage.getItem('todos');
-// if(saved) {
-    // todos = JSON.parse(saved, customParser);
-// }
+onreset="resetTaskList()";
