@@ -1,10 +1,10 @@
 let tasks = [
     {
-        name: 'thing1',
+        task: 'thing1',
         date: 'datestamp1'
     },
     {
-        name: 'thing2',
+        tast: 'thing2',
         date: 'datestamp2'
     }
 ];
@@ -36,10 +36,6 @@ const tasksApi = {
             tasks.splice(index, 1);
             saveTasks();
         }
-        // add(date); {
-        //     dates.push(date);
-        //     saveDates();
-        // };  
     }
 };
 export default tasksApi;

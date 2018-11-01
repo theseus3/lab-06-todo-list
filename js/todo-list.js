@@ -26,11 +26,7 @@ const taskList = {
     },
     add(task) {
         const dom = makeTask(task);
-
-    // add(date) {
-        // const dom = makeDate(date);
     
- 
         const removeButton = dom.querySelector('button');
         const listItem = dom.querySelector('li');
 

@@ -12,8 +12,7 @@ const addTask = {
             };
 
             onAdd(task);
-            new Date();
-
+            
             form.reset();
             document.activeElement.blur();
         });
